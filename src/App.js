@@ -7,6 +7,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import { useEffect } from "react";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import ForgetPasword from "./Components/LoginPage/ForgetPasword";
+import UserExpense from "./Components/UserExpense/UserExpense";
 
 function App() {
   const ctx = useContext(AuthenticationCtx);
@@ -34,6 +35,7 @@ function App() {
   {ctx.isLoggedIn&&  <Route path="/home" element={<HomePage></HomePage>}></Route>}
         <Route path="/userProfile" element={<UserProfile></UserProfile>}></Route>
         <Route path='/forget' element={<ForgetPasword></ForgetPasword>}></Route>
+        <Route path='/userExpense' element={<UserExpense></UserExpense>}></Route>
       </Routes>
     </div>
   );

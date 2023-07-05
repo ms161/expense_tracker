@@ -13,6 +13,8 @@ const Header = () => {
     <div>
 
       <Link to={'/login'}>  <button onClick={logoutHandler} className='text-2xl font-bold bg-red-600 p-2 b rounded-xl'> LogOut</button></Link>
+     <Link to={'/userExpense'}> <div>Go to expenses</div>
+     </Link>
     </div>
   )
 }
