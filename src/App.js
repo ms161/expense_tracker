@@ -5,6 +5,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import AuthenticationCtx from "./Components/Authentication/Authentication";
 import HomePage from "./Components/HomePage/HomePage";
 import { useEffect } from "react";
+import UserProfile from "./Components/UserProfile/UserProfile";
 
 function App() {
   const ctx = useContext(AuthenticationCtx);
@@ -12,21 +13,23 @@ function App() {
   console.log(ctx.isLoggedIn);
  
   useEffect(() => {
+    console.log('useeffect running')
     if (ctx.isLoggedIn) {
       navigate("/home");
     } else {
-      // navigate("/login");
+      navigate("/login");
     }
-  }, [ctx.isLoggedIn, navigate]);
+  }, [ctx.isLoggedIn]);
 
   return (
     <div>
       <Routes>
         <Route index element={<SignUpPage />}></Route>
 
-        <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+     {  !ctx.isLoggedIn&&  <Route path="/login" element={<LoginPage></LoginPage>}></Route>}
 
-        <Route path="/home" element={<HomePage></HomePage>}></Route>
+   {  ctx.isLoggedIn&&   <Route path="/home" element={<HomePage></HomePage>}></Route>}
+        <Route path="/userProfile" element={<UserProfile></UserProfile>}></Route>
       </Routes>
     </div>
   );
