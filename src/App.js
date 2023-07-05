@@ -10,7 +10,8 @@ import UserProfile from "./Components/UserProfile/UserProfile";
 function App() {
   const ctx = useContext(AuthenticationCtx);
   const navigate = useNavigate();
-  console.log(ctx.isLoggedIn);
+  // console.log(ctx.isLoggedIn);
+  
  
   useEffect(() => {
     console.log('useeffect running')
