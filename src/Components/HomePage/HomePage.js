@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Header from '../Header/Header'
 
 const HomePage = () => {
   const token=localStorage.getItem('token')
@@ -40,11 +41,14 @@ try
 
 
   return (
+    <div>
+  <Header></Header>
     <div className='flex justify-around  items-center '>
 
     <div className='text-[2rem]'>Welcome TO expense tracker</div>
     <div>YOur Profile is incomplete <Link to='/userProfile'> <button className='border bg-green-500 p-1 rounded-lg'>Complete now</button> </Link></div>
     <button onClick={verificationHandler}>click here to verify ur Email</button>
+    </div>
     </div>
   )
 }

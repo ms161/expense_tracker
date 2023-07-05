@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import SignUpPage from "./Components/SignUpPage/SignUpPage";
 import { Route, Routes, useNavigate } from "react-router-dom";
@@ -10,8 +10,9 @@ import UserProfile from "./Components/UserProfile/UserProfile";
 function App() {
   const ctx = useContext(AuthenticationCtx);
   const navigate = useNavigate();
+
   // console.log(ctx.isLoggedIn);
-  
+  console.log('app running')
  
   useEffect(() => {
     console.log('useeffect running')
@@ -27,9 +28,9 @@ function App() {
       <Routes>
         <Route index element={<SignUpPage />}></Route>
 
-     {  !ctx.isLoggedIn&&  <Route path="/login" element={<LoginPage></LoginPage>}></Route>}
+ { !ctx.isLoggedIn&&  <Route path="/login" element={<LoginPage></LoginPage>}></Route>}
 
-   {  ctx.isLoggedIn&&   <Route path="/home" element={<HomePage></HomePage>}></Route>}
+  {ctx.isLoggedIn&&  <Route path="/home" element={<HomePage></HomePage>}></Route>}
         <Route path="/userProfile" element={<UserProfile></UserProfile>}></Route>
       </Routes>
     </div>
