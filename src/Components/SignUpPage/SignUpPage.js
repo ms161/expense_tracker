@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
   const [enteredEmail, setEnteredEmail] = useState();
@@ -118,8 +119,10 @@ const SignUpPage = () => {
         </div>
       </div>
       <div>
-        <button className="bg-green-400 p-4 relative hover:animate-none animate-bounce bg-gradient-to-r from-yellow-400 to-red-500 hover:from-pink-500 hover:to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg overflow-hidden transition-all duration-500 transform hover:scale-110 hover:bg-green-900 hover:text-white  ">
-          Already have an account? Login
+        <button className="bg-green-400 p-4 relative hover:animate-none animate-pulse bg-gradient-to-r from-yellow-400 to-red-500 hover:from-pink-500 hover:to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg overflow-hidden transition-all duration-500 transform hover:scale-110 hover:bg-green-900 hover:text-white  ">
+        <Link to={'/login'}>
+         Already have an account? Login
+        </Link> 
         </button>
       </div>
     </div>
