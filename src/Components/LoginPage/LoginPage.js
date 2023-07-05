@@ -103,6 +103,11 @@ console.log(ctx)
             >
               Log In
             </button>
+          <Link to={'/forget'}>
+          <button className='bg-red-600 p-3 rounded-xl mt-4 text-white'>
+              Forget Password 
+            </button>
+          </Link> 
           </div>
         </div>
         <div>
