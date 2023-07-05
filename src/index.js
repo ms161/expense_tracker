@@ -7,13 +7,13 @@ import { AuthenticationProvider } from "./Components/Authentication/Authenticati
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  
       <AuthenticationProvider>
     <BrowserRouter>
         <App />
     </BrowserRouter>
       </AuthenticationProvider>
-  </React.StrictMode>
+ 
 );
 
 // If you want to start measuring performance in your app, pass a function
