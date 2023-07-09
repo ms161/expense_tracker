@@ -78,7 +78,7 @@ const SignUpPage = () => {
 
   return (
     <div className="h-screen bg-gradient-to-b from-purple-400 via-pink-500 to-red-500 m-auto mt-[15re] w-screen bg-green-400 flex flex-col gap-5 justify-center items-center">
-      <div className="flex flex-col bg-slate-900-800  border rounded-lg border-gray-500 shadow-2xl gap-5 p-[10rem] ">
+      <div className=" animate__animated animate__backInRight animate__slow  flex flex-col bg-slate-900-800  border rounded-lg border-gray-500 shadow-2xl gap-5 p-[10rem] ">
         <div className="text-center font-bold text-2xl text-red-200 ">
           Sign UP
         </div>
@@ -118,7 +118,7 @@ const SignUpPage = () => {
           </button>
         </div>
       </div>
-      <div>
+      <div className="animate__animated animate__backInLeft animate__slow">
         <button className="bg-green-400 p-4 relative hover:animate-none animate-pulse bg-gradient-to-r from-yellow-400 to-red-500 hover:from-pink-500 hover:to-purple-500 text-white font-bold py-3 px-8 rounded-full shadow-lg overflow-hidden transition-all duration-500 transform hover:scale-110 hover:bg-green-900 hover:text-white  ">
         <Link to={'/login'}>
          Already have an account? Login

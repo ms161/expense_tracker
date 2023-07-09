@@ -1,41 +1,41 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-const AuthenticationCtx = React.createContext({
-  isLoggedIn: "",
-  onLogin: () => {},
-});
+// const AuthenticationCtx = React.createContext({
+//   isLoggedIn: "",
+//   onLogin: () => {},
+// });
 
-export const AuthenticationProvider = (props) => {
+// export const AuthenticationProvider = (props) => {
   
-  const [token, setToken] = useState(localStorage.getItem("token"));
-  const [isLoggedIn, setIsLoggedIn] = useState(token);
+//   const [token, setToken] = useState(localStorage.getItem("token"));
+//   const [isLoggedIn, setIsLoggedIn] = useState(token);
 
-  const loginHandler = (token1) => {
-    setIsLoggedIn(true);
-    setToken(token1);
+//   const loginHandler = (token1) => {
+//     setIsLoggedIn(true);
+//     setToken(token1);
     
-    localStorage.setItem("token", token1);
-};
+//     localStorage.setItem("token", token1);
+// };
 
-const logOutHandler=e=>{
-  setToken(null)
-  setIsLoggedIn(null)
-  localStorage.removeItem('token')
-}
+// const logOutHandler=e=>{
+//   setToken(null)
+//   setIsLoggedIn(null)
+//   localStorage.removeItem('token')
+// }
 
-  const ctxValue = {
-    isLoggedIn: isLoggedIn,
-    onLogin: loginHandler,
-    onLogOut:logOutHandler
-  };
+//   const ctxValue = {
+//     isLoggedIn: isLoggedIn,
+//     onLogin: loginHandler,
+//     onLogOut:logOutHandler
+//   };
 
 
 
-  return (
-    <AuthenticationCtx.Provider value={ctxValue}>
-      {props.children}
-    </AuthenticationCtx.Provider>
-  );
-};
+//   return (
+//     <AuthenticationCtx.Provider value={ctxValue}>
+//       {props.children}
+//     </AuthenticationCtx.Provider>
+//   );
+// };
 
-export default AuthenticationCtx;
+// export default AuthenticationCtx;

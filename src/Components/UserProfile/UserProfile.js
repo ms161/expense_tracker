@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import {  useSelector } from "react-redux/es/hooks/useSelector";
 
 const UserProfile = () => {
 const nameRef=useRef('')
@@ -6,11 +7,10 @@ const photoRef=useRef('')
 const token=localStorage.getItem('token')
 const [name,setName]=useState()
 const [photo,setPhoto]=useState()
-// const nameHandler=e=>{
-//   nameRef.current=e.target.value 
-//   console.log(nameRef)
-  
-// }
+
+const isAuth=useSelector(state=>state.auth.isAuthenticated)
+console.log(isAuth)
+const reduxAmount=useSelector(state=>state.auth.expensesAmount)
 function nameHandler(e){
   setName(e.target.value)
 }
@@ -81,13 +81,13 @@ async function getData(){
 
 
   return (
-    <div>
+    <div className="bg-gradient-to-tl from-indigo-200 via-slate-600 to-indigo-200 h-screen">
         <div className="flex  gap-6 border justify-around text-2xl ">
 
-      <div className="">
+      <div className="font-extrabold text-transparent text-2xl bg-clip-text bg-gradient-to-r from-blue-700 to-green-600">
         Winners never quite,Quitters never win.
       </div>
-      <div className="italic bg-red-600 text-white p-4 rounded-xl ">
+      <div className="italic bg-red-600 text-white p-4 rounded-xl bg-gradient-to-r from-green-700 to-purple-700">
         Your profile is 60% completed. A complete profile has higher chances of
         landing a page<span>Complete now</span>
       </div>
@@ -97,14 +97,15 @@ async function getData(){
       <div>
         <div className="flex flex-col items-center justify-center mt-5 gap-5">
 
-        <label htmlFor="name">Full Name:</label>
-        <div><input onChange={nameHandler} value={name} ref={nameRef} className="bg-white border p-3 rounded-lg border-black " type="text" id="name" /></div>
-        <label  htmlFor="photo">Profile Photo URL:</label>
-        <div><input ref={photoRef} value={photo} const={photoUrlHandler} onChange={photoUrlHandler}  className="bg-white border p-3 rounded-lg border-black " type="text" id="photo" /></div>
+        <label className="text-xl font-thin text-white font-mono" htmlFor="name">Full Name:</label>
+        <div><input onChange={nameHandler} value={name} ref={nameRef} className="bg-white border w-96 p-3 rounded-lg border-black " type="text" id="name" /></div>
+        <label className="text-xl font-thin text-white font-mono" htmlFor="photo">Profile Photo URL:</label>
+        <div><input ref={photoRef} value={photo} const={photoUrlHandler} onChange={photoUrlHandler}  className="bg-white w-96 border p-3 rounded-lg border-black " type="text" id="photo" /></div>
         </div>
         <div className="text-center mt-5">
 
-       <button onClick={updateHandler} className="bg-red-800 m-auto p-2 rounded-xl border  text-white">Update</button>
+       <button onClick={updateHandler} className="bg-blue-700 bg-gradient-to-r  from-black to-white font-bold font-serif m-auto p-2 rounded-xl border w-96 text-white">Update</button>
+      
         </div>
       </div>
     </div>
